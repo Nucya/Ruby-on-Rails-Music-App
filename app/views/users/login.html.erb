@@ -1,0 +1,75 @@
+<style type="text/css">
+form {
+  width: auto;
+}
+label {
+width: 10px;
+float: left;
+text-align: right;
+margin-right: 70px;
+color: white;
+font-size: 12px;
+font-family: sans-serif;
+display: inline-block;
+}
+
+input {
+  margin-bottom: 10px;
+  color:#89bdd3;
+  float:left;
+}
+h2{
+  font-family: sans-serif;
+  text-align: center;
+  color: #9ad3de;
+  font-size: 30px;
+}
+h5{
+  font-size: 16px;
+  color: grey;
+}
+form{
+  float: left;
+  display: inline-block;
+  text-align: center;
+   }
+}
+</style>
+
+<body style='text-align: center; text-align: left;' bgcolor="#e3e3e3">
+<h2> <span style="font-weight: lighter">DOJO</span> MUSIC HUB</h2>
+<hr width=75% color="#9ad3de" size="2">
+
+<div>
+    <%= flash[:messages] %>
+</div>
+
+<form style="margin-left: 450px;" action="/users" method="POST">
+    <h5><strong>Register</strong></h5>
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="text" name="first_name" value="" placeholder="First Name">
+    <br>
+    <input type="text" name="last_name" placeholder="Last Name">
+    <br>
+    <input type="email" name="email" placeholder="Email">
+    <br>
+    <input type="password" name="password" placeholder="Password">
+    <br>
+    <input type="password" name="password_confirmation" placeholder="Confirm Password">
+    <br>
+    <input type="submit" value="Register">
+</form>
+
+<form style="margin-left: 100px;" action="users/songs" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <h5>Login</h5>
+    <input type="email" name="email" placeholder="Email">
+    <br>
+    <input type="password" name="password" placeholder="Password">
+    <br>
+    <input type="submit" value="Login">
+</form>
+
+<hr width=75% color="#9ad3de" size="2">
+</body>
